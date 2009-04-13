@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # NAMESPACEにある関数名をlispで使えるように変換させます。
-# NAMESPACEのexpoort()の括弧内にある関数名をコピーしてファイルを指定してから使ってください。
+# NAMESPACEのexpoort()内にある関数をコピーしてファイルを指定してから使ってください。
 
 import re
 
