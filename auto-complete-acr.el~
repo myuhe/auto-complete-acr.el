@@ -39,6 +39,7 @@
 ;;; Installation:
 ;;
 ;; Put auto-complete-acr.el to your load-path.
+;; The load-path is usually ~/elisp/.
 ;; It's set in your ~/.emacs like this:
 
 
