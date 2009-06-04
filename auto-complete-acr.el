@@ -7,8 +7,9 @@
 ;; Copyright (C)  2009, myuhe  , all rights reserved.
 ;; Created: 2009-04-13 
 ;; Version: 0.1
-;; Last-Updated: 2009-04-13 14:25:33
-;; URL: http://github.com/myuhe/auto-complete-acr.el/blob/23e4295bdaa177efac5a4f9020ab5f86e7a11f2b/auto-complete-acr.el
+;; Last-Updated: 2009-03-01 14:25:33
+;;           By: Yen-Chin,Lee
+;; URL: http://www.emacswiki.org/emacs/download/auto-complete-octave.el
 ;; Keywords: auto-complete
 ;; Compatibility: GNU Emacs 23.0.91
 ;;
@@ -39,6 +40,7 @@
 ;;; Installation:
 ;;
 ;; Put auto-complete-acr.el to your load-path.
+;; The load-path is usually ~/elisp/.
 ;; It's set in your ~/.emacs like this:
 
 
@@ -49,7 +51,7 @@
 ;;
 
 ;;; Acknowledgements:
-;; I refered and hacked auto-complete-octave.el(http://www.emacswiki.org/emacs/auto-complete-octave.el)
+;; I refered and hacked auto-complete-acr.el(http://www.emacswiki.org/emacs/auto-complete-octave.el)
 ;; thanks Yen-Chin,Lee!!
 ;;
 
@@ -66,6 +68,7 @@
 ;;; Code:
 (defconst acr-keywords
    (sort (list
+;;;NAMESPACE:stats
 	  "add.scope" "add1" "addmargins" "aggregate" "aggregate.data.frame" "testaggregate.default"
 	  "aggregate.ts" "AIC" "alias" "anova" "anova.glm" "testanova.glmlist" "anova.lm" "anova.lmlist"
 	  "anova.mlm" "aov" "approx" "testapproxfun" "as.formula" "as.ts" "ave"
@@ -120,6 +123,12 @@
 	  "var" "testvariable.names" "vcov"
 	  "weighted.mean" "weighted.residuals" "testweights" "window" "window<-" "write.ftable"
 	  "xtabs" "pbirthday" "testqbirthdaytest"
+;;;NAMESPACE:base
+          "Bessel" "Defunct" "Deprecated" "LAPACK" "New-Internal" "Scripts" "TAOCP" "all.equal" "allnames" "aperm" "append" "apply" "array" "as" "assign" "attach" "attr" "autoload" "backquote" "backsolve" "bindenv" "builtins"
+	  "by" "callCC" "cat" "character" "chol" "colSums" "conditions" "conflicts" "connections" "constants" "contributors" "converters" "cut" "data.matrix" "dataframe" "dates" "datetime" "dcf" "debug" "delay" "det" "diag" "diff" "dput" "dump" "duplicated" "dynload" "eapply" "eigen" "environment" "eval" "eval~" "exists" "expand.grid" "factor" "files" "findInt" "formals" "format" "frametools" "funprog" "get" "getenv"
+	  "gl" "grep" "identical" "ifelse" "interaction" "is" "jitter" "kappa" "kronecker" "labels" "lapply" "lazyload" "library" "license" "load" "locales" "lower.tri" "mapply" "match" "match.fun" "matrix" "max.col" "mean" "merge" "message" "methodsSupport" "mode" "namespace" "notyet" "options" "outer" "pairlist" "parse" "paste" "pmax"
+	  "pretty" "print" "qr" "quit" "range" "rank" "raw" "rep" "replace" "replicate" "rev" "rle" "rm" "rowsum" "sample" "sapply" "scale" "scan" "seq" "serialize" "sets" "sink" "solve" "sort" "source" "split" "srcfile" "stop" "structure" "strwrap" "summary" "svd" "sweep" "switch" "sys" "table" "tabulate" "tapply" "taskCallback" "temp"
+	  "time" "toString" "traceback" "unix" "unlist" "unname" "upper.tri" "userhooks" "utilities" "utils" "vector" "version" "warnings" "which" "windows" "withVisible" "write" "xor" "zapsmall" "zdatetime" "zdynvars" "zzz"
 	  ) #'(lambda (a b) (< (length a) (length b)))))
 
 (defvar ac-source-acr
