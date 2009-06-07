@@ -26,12 +26,12 @@ for file__ in filenamelist:
     strfrag = 0
 
     for line in f:
-        if line[0:6] == 'export' and ")" not in line :
+        if line[0:7] == 'export(' and ")" not in line:
             frag = 1
             line = line.strip()
             line = p1.sub("",line)
             mer.append(line)
-        elif line[0:6] == 'export' and ")" in line:
+        elif line[0:7] == 'export(' and ")" in line:
             frag= 0
             line = line.strip()
             line = re.sub("\)",",",line)
