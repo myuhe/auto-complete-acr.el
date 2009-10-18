@@ -7,9 +7,8 @@
 ;; Copyright (C)  2009, myuhe  , all rights reserved.
 ;; Created: 2009-04-13 
 ;; Version: 0.1
-;; Last-Updated: 2009-03-01 14:25:33
-;;           By: Yen-Chin,Lee
-;; URL: http://www.emacswiki.org/emacs/download/auto-complete-octave.el
+
+;; URL: http://github.com/myuhe/auto-complete-acr.el
 ;; Keywords: auto-complete
 ;; Compatibility: GNU Emacs 23.0.91
 ;;
@@ -43,6 +42,9 @@
 ;; The load-path is usually ~/elisp/.
 ;; It's set in your ~/.emacs like this:
 
+;; (require 'auto-complete)
+;; (require 'auto-complete-yasnippet)
+;; (require 'auto-complete-acr)
 
 ;;; Change log:
 ;;
