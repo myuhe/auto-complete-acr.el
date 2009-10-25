@@ -1,0 +1,6 @@
+#name : function
+# --
+${1:var} <- function(x = ${2:arg1} , y = ${3:arg2}) {
+    $0
+}              
+

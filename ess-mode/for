@@ -1,0 +1,6 @@
+#name : for ... in ... : ...
+# --
+for(${1:var} in ${2:start}:${3:end}) {
+    ${4:eval}
+}
+

@@ -1,0 +1,8 @@
+#name : if
+# --
+if (${1:var}) {                
+    ${2:eval}
+} else {
+    ${3:eval}
+}
+
