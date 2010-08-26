@@ -484,9 +484,10 @@ command may be necessary if you modify an attached dataframe."
 (defvar ac-source-omni-pre-list-essacr
   '(
     (prefix . "\\$\\=")
-    (init . (lambda ()
-              (setq acr-completions-cache ess-local-process-name)))
-    (candidates . ac-list-internal-complete-object-name)))
+    (prefix . ac-prefix-list-R)
+    (init . ac-list-internal-complete-object-name)
+    (candidates . ac-list-internal-complete-object-name)
+    (cache)))
 
 (defvar ac-source-omni-class-essacr
   '(
@@ -498,9 +499,9 @@ command may be necessary if you modify an attached dataframe."
 (defvar ac-source-omni-pre-class-essacr  
   '(
     (prefix . "\\@\\=")
-    (init . (lambda ()
-              (setq acr-completions-cache ess-local-process-name)))
-    (candidates . ac-class-internal-complete-object-name)))
+    (init . ac-class-internal-complete-object-name)
+    (candidates . ac-class-internal-complete-object-name)
+    (cache)))
 
 (add-hook 'ess-mode-hook
           (lambda ()
