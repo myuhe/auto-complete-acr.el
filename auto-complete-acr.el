@@ -6,7 +6,7 @@
 ;; Maintainer: myuhe
 ;; Copyright (C)  2009, myuhe  , all rights reserved.
 ;; Created: 2009-04-13 
-;; Version: 0.3
+;; Version: 0.3.2
 
 ;; URL: http://github.com/myuhe/auto-complete-acr.el
 ;; Keywords: auto-complete
@@ -53,7 +53,8 @@
 ;;     use ess-get-object-list function
 ;; 2010/08/25
 ;;     add omni completion
-
+;; 2010/08/27
+;;     refactoring
 
 ;;; Acknowledgements:
 ;; I refered and hacked auto-complete-octave.el(http://www.emacswiki.org/emacs/auto-complete-octave.el)
@@ -466,69 +467,44 @@ command may be necessary if you modify an attached dataframe."
         components
         )))
 
-(defun ac-list-internal-complete-object-name ()
-  (mapcar (lambda (x) (concat "$" x))
-          (ac-internal-complete-object-name)))
-
-(defun ac-class-internal-complete-object-name ()
-  (mapcar (lambda (x) (concat "@" x))
-          (ac-internal-complete-object-name)))
-
 (defvar ac-source-omni-list-essacr
   '(
     (prefix . "\\$\\(.*\\)")
-    (init . (lambda ()
-              (setq acr-completions-cache ess-local-process-name)))
-    (candidates . ac-internal-complete-object-name)))
-
-(defvar ac-source-omni-pre-list-essacr
-  '(
-    (prefix . "\\$\\=")
-    (prefix . ac-prefix-list-R)
-    (init . ac-list-internal-complete-object-name)
-    (candidates . ac-list-internal-complete-object-name)
+    (init . ac-internal-complete-object-name)
+    (requires . 0)
+    (candidates . ac-internal-complete-object-name)
     (cache)))
 
 (defvar ac-source-omni-class-essacr
   '(
     (prefix . "\\@\\(.*\\)")
-    (init . (lambda ()
-              (setq acr-completions-cache ess-local-process-name)))
-    (candidates . ac-internal-complete-object-name)))
-
-(defvar ac-source-omni-pre-class-essacr  
-  '(
-    (prefix . "\\@\\=")
-    (init . ac-class-internal-complete-object-name)
-    (candidates . ac-class-internal-complete-object-name)
+    (init . ac-internal-complete-object-name)
+    (requires . 0)
+    (candidates . ac-internal-complete-object-name)
     (cache)))
 
 (add-hook 'ess-mode-hook
           (lambda ()
             (make-local-variable 'ac-sources)
-            (setq ac-sources '(
-                               ac-source-filename 
-                               ac-source-yasnippet 
-                               ac-source-essacr 
-                               ac-source-acr 
-                               ac-source-omni-list-essacr
-                               ac-source-omni-pre-list-essacr
-                               ac-source-omni-class-essacr
-                               ac-source-omni-pre-class-essacr
-                               ac-source-words-in-same-mode-buffers))))
+            (setq ac-sources 
+                  '(ac-source-filename 
+                    ac-source-yasnippet 
+                    ac-source-omni-list-essacr
+                    ac-source-omni-class-essacr
+                    ac-source-essacr 
+                    ac-source-acr 
+                    ac-source-words-in-same-mode-buffers))))
 
 (add-hook 'inferior-ess-mode-hook
           (lambda ()
             (make-local-variable 'ac-sources)
-            (setq ac-sources '(
-                               ac-source-filename
-                               ac-source-yasnippet 
-                               ac-source-essacr
-                               ac-source-acr
-                               ac-source-omni-list-essacr
-                               ac-source-omni-pre-list-essacr
-                               ac-source-omni-class-essacr
-                               ac-source-omni-pre-class-essacr
-                               ac-source-words-in-same-mode-buffers))))
+            (setq ac-sources 
+                  '(ac-source-filename
+                    ac-source-yasnippet 
+                    ac-source-omni-list-essacr
+                    ac-source-omni-class-essacr
+                    ac-source-essacr
+                    ac-source-acr
+                    ac-source-words-in-same-mode-buffers))))
 
 (provide 'auto-complete-acr)
