@@ -487,10 +487,10 @@ command may be necessary if you modify an attached dataframe."
           (lambda ()
             (make-local-variable 'ac-sources)
             (setq ac-sources 
-                  '(ac-source-filename 
-                    ac-source-yasnippet 
-                    ac-source-omni-list-essacr
+                  '(ac-source-omni-list-essacr
                     ac-source-omni-class-essacr
+                    ac-source-filename 
+                    ac-source-yasnippet 
                     ac-source-essacr 
                     ac-source-acr 
                     ac-source-words-in-same-mode-buffers))))
@@ -499,10 +499,10 @@ command may be necessary if you modify an attached dataframe."
           (lambda ()
             (make-local-variable 'ac-sources)
             (setq ac-sources 
-                  '(ac-source-filename
-                    ac-source-yasnippet 
-                    ac-source-omni-list-essacr
+                  '(ac-source-omni-list-essacr
                     ac-source-omni-class-essacr
+                    ac-source-filename
+                    ac-source-yasnippet 
                     ac-source-essacr
                     ac-source-acr
                     ac-source-words-in-same-mode-buffers))))
